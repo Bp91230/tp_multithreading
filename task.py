@@ -3,7 +3,7 @@ from time import perf_counter
 import numpy as np
 
 
-class task:
+class Task:
     def __init__(self, _size, _id):
         self.identifier = _id
         self.x = 0
@@ -19,10 +19,3 @@ class task:
         self.x = np.linalg.solve(self.a, self.b)
         end = perf_counter()
         self.time = end - start
-
-
-if __name__ == "__main__":
-    myTask = task(100, 0)
-    while True:
-        myTask.work()
-        print(myTask.time)
