@@ -9,16 +9,18 @@ class Minion(QueueClient):
 
     def start_working(self):
         while True:
+            print("Waiting for task ...")
             task = self.task_queue.get()
-            if task is None:
-                break  # Exit loop when a None task is received
 
+            print(f"Task {task.identifier} received")
             task.work()
+
             self.result_queue.put(
                 f"Task {task.identifier} completed in {task.time} seconds"
             )
+            print("result sent ... ")
 
 
 if __name__ == "__main__":
-    minion = Minion("127.0.0.1", b"secret")  # Provide the server's address and authkey
+    minion = Minion("localhost", b"secret")  # Provide the server's address and authkey
     minion.start_working()

@@ -11,14 +11,14 @@ class QueueClient:
         self.result_queue = None
 
     def connect(self):
-        QueueManager.register("task_queue")
-        QueueManager.register("result_queue")
+        QueueManager.register("get_tasks")
+        QueueManager.register("get_results")
 
-        manager = QueueManager(address=(self.address, 50000), authkey=self.authkey)
+        manager = QueueManager(address=(self.address, 5000), authkey=self.authkey)
         manager.connect()
 
-        self.task_queue = manager.task_queue()
-        self.result_queue = manager.result_queue()
+        self.task_queue = manager.get_tasks()
+        self.result_queue = manager.get_results()
 
     def send_task(self, task):
         self.task_queue.put(task)
