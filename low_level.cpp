@@ -48,12 +48,12 @@ class Task {
       }
 
       auto start_time = std::chrono::high_resolution_clock::now();
-      vectorX = matrixA.fullPivLu().solve(vectorB);
+      vectorX = matrixA.lu().solve(vectorB);
       auto end_time = std::chrono::high_resolution_clock::now();
       timeExecution = std::chrono::duration_cast<std::chrono::microseconds>(
                           end_time - start_time)
                           .count() /
-                      1000000;
+                      1000;
 
       // Send back information in JSON format
       // sendBackInfo();
@@ -102,13 +102,14 @@ class Task {
 };
 
 int main() {
+  Eigen::setNbThreads(2);
   Task task(0, 0);
   task.solve();
 
   // Access the attributes of the task object as needed
   std::cout << "Task ID: " << task.identifier << "\n";
   std::cout << "Task Size: " << task.size << "\n";
-  std::cout << "Execution Time: " << task.timeExecution << " s\n";
+  std::cout << "Execution Time: " << task.timeExecution << " ms\n";
 
   // ... and so on.
 
