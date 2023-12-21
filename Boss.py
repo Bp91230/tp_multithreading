@@ -23,4 +23,4 @@ class Boss(QueueClient):
 
 if __name__ == "__main__":
     boss = Boss("localhost", b"secret")  # Provide the server's address and authkey
-    boss.assign_task(3, 10)  # Assign tasks with size 3, 2 times
+    boss.assign_task(3000, 3)  # Assign tasks with size 3000, 3 times

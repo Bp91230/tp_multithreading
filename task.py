@@ -23,6 +23,7 @@ class Task:
         taskInfo = {
             "identifier": self.identifier,
             "time": self.time,
+            "size": self.size,
             "a": self.a.tolist(),
             "b": self.b.tolist(),
             "x": self.x.tolist(),
@@ -33,6 +34,7 @@ class Task:
         task = Task()
         taskInfo = json.loads(text)
         task.identifier = taskInfo["identifier"]
+        task.size = taskInfo["size"]
         task.time = taskInfo["time"]
         task.a = np.array(taskInfo["a"])
         task.b = np.array(taskInfo["b"])
@@ -47,10 +49,13 @@ class Task:
             test = False
         if self.time != other.time:
             test = False
+        if self.size != other.size:
+            test = False
         if not np.array_equal(self.a, other.a):
             test = False
         if not np.array_equal(self.b, other.b):
             test = False
         if not np.array_equal(self.x, other.x):
             test = False
+
         return test
