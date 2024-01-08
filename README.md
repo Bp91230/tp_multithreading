@@ -1,4 +1,4 @@
-#TP Multithreading
+# TP Multithreading
 This repository is a school project for the multiprocessing class. 
 
 
