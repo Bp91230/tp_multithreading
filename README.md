@@ -17,11 +17,12 @@ Also install the multiprocessing python library : `pip install multiprocessing` 
 
 
 
-Cmake instructions ... (TODO)
 
-To run the project first execute the QueueManager.py file by doing
 
-`python3 QueueManager.py`
+
+To run the project first execute the QueueManager.py file by doing 
+
+`python3 QueueManager.py`    which will start the local server.
 
 Then execute the Boss.py file by doing 
 `python3 Boss.py`
@@ -35,4 +36,26 @@ The task to compute in the Minion program is a resolution of a linear system whi
 
 The Boss sends the task in a queue handled by the QueueManager, the Minion read the task queue and execute the tasks and send back to the Boss 
 results like the execution time of the computed task. 
+
+
+
+We can also use the proxy( json TODO)...
+
+
+
+
+Low level cpp (TODO) ...
+Cmake instructions
+`# configure`
+`cmake -B build -S .`
+`# compile`
+`cmake --build build`
+`# run`
+`./build/low_level`
+
+
+
+
+
+
 
