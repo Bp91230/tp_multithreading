@@ -22,12 +22,17 @@ Also install the multiprocessing python library : `pip install multiprocessing` 
 
 To run the project first execute the QueueManager.py file by doing 
 
+
+
 `python3 QueueManager.py`    which will start the local server.
 
 Then execute the Boss.py file by doing 
+
+
 `python3 Boss.py`
 
 And then the Minion.py file by doing :
+
 
 `python3 Minion.py`
 
@@ -47,14 +52,17 @@ The proxy enables communication between the Boss in python and the minions (task
 And to use the cpp task solver, you need first to build the environment by executing these 
 Cmake instructions :
 
-`# configure`
+
 `cmake -B build -S .`
-`# compile`
+
+
 `cmake --build build`
 
 
 In order to run the cpp task solver, run first in different terminals the QueueManager.py and the Boss.py files as shown earlier, then in another terminal the python proxy by doing : 
 `python3 proxy.py`. And finally, you may run the cpp solver :
+
+
 `./build/low_level`
 
 Also make sure that the minion.py program is not running as the same time to avoid to consuming data 
