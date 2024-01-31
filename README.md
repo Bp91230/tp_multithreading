@@ -60,6 +60,8 @@ Cmake instructions :
 
 
 In order to run the cpp task solver, run first in different terminals the QueueManager.py and the Boss.py files as shown earlier, then in another terminal the python proxy by doing : 
+
+
 `python3 proxy.py`. And finally, you may run the cpp solver :
 
 
