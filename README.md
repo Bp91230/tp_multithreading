@@ -2,7 +2,7 @@
 This repository is a school project for the multiprocessing class. 
 
 
-To access to the code of thee project you may clone the repository by doing :
+To access to the code of the project you may clone the repository by doing :
 
 `git clone https://github.com/Bp91230/tp_multithreading.git`
 
@@ -37,24 +37,27 @@ The task to compute in the Minion program is a resolution of a linear system whi
 The Boss sends the task in a queue handled by the QueueManager, the Minion read the task queue and execute the tasks and send back to the Boss 
 results like the execution time of the computed task. 
 
+The second part of the project is to compare the performance of minions in python and minions in cpp.
 
 
-We can also use the proxy( json TODO)...
+In order to do that, we have a python made proxy in the file `proxy.py`
+The proxy file allows us to create an HTTP server on which the boss can publish tasks using a json format others can connect to it and read the tasks sent
+The proxy enables communication between the Boss in python and the minions (task solver) in cpp. Communication will be done by sending data in json format to the server.
 
+And to use the cpp task solver, you need first to build the environment by executing these 
+Cmake instructions :
 
-
-
-Low level cpp (TODO) ...
-Cmake instructions
 `# configure`
 `cmake -B build -S .`
 `# compile`
 `cmake --build build`
-`# run`
+
+
+In order to run the cpp task solver, run first in different terminals the QueueManager.py and the Boss.py files as shown earlier, then in another terminal the python proxy by doing : 
+`python3 proxy.py`. And finally, you may run the cpp solver :
 `./build/low_level`
 
-
-
+Also make sure that the minion.py program is not running as the same time to avoid to consuming data 
 
 
 
