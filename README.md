@@ -67,7 +67,7 @@ In order to run the cpp task solver, run first in different terminals the QueueM
 
 `./build/low_level`
 
-Also make sure that the minion.py program is not running as the same time to avoid to consuming data 
+Also make sure that the minion.py program is not running as the same time to avoid consuming data 
 
 
 
